@@ -34,14 +34,14 @@ function buildQuery(topic, board, level, qtype) {
 
   let query=`site:savemyexams.com filetype:pdf "${topic}" -"Time Allowed" -"Score"`;
 
-  if (qtype==='Notes') {
-    query+=' -"Multiple Choice Questions"';
-  } else if (qtype==='MCQ') {
-    query+=' "Multiple Choice Questions"';
-  } else if (qtype==='Theory') {
-    query+=' -"Multiple Choice Questions" "Theory Questions"';
-  }
+  if (qtype === 'Notes') {
+    query += ' -"Multiple Choice Questions"';}
+  if (qtype === 'MCQ') {
+    query += ' "Multiple Choice Questions"';}
+  if (qtype === 'Theory') {
+    query += ' "Theory Questions"';}
 
+  
   if (level) query+=` "${level}"`;
   if (board && boardTags[board]) query +=` ${boardTags[board]}`;
   return query;
