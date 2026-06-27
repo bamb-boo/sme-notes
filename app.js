@@ -9,22 +9,13 @@ function getDotColor() {
   return isDark ? '#ffffff' : '#000000';
 }
 
-const footer = document.querySelector('.site-footer');
-const footerRect = footer.getBoundingClientRect();
-const bannerRect = banner.getBoundingClientRect();
-const footerTop = footerRect.top + window.scrollY - bannerRect.top;
-const footerBottom = footerTop + footerRect.height;
-const paddingAroundFooter = 60;
-
 let dots = [];
 for (let i = 0; i < 50; i++) {
   let x = Math.floor(Math.random() * canvas.width);
   let y;
 
-  do {
-    y = Math.floor(Math.random() * canvas.height);
-  } while (y > (footerTop - paddingAroundFooter) && y < (footerBottom + paddingAroundFooter));
-
+y = Math.floor(Math.random() * canvas.height);
+  
   dots.push({
     x,
     y,
